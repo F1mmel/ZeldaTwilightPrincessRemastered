@@ -1,0 +1,431 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8980987725624190304
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 0
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.83
+  contrast:
+    m_OverrideState: 1
+    m_Value: 7.6
+  colorFilter:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  hueShift:
+    m_OverrideState: 1
+    m_Value: 0
+  saturation:
+    m_OverrideState: 1
+    m_Value: 5.7
+--- !u!114 &-1196163815882609368
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
+  m_Name: ChannelMixer
+  m_EditorClassIdentifier: 
+  active: 0
+  redOutRedIn:
+    m_OverrideState: 0
+    m_Value: 112
+  redOutGreenIn:
+    m_OverrideState: 0
+    m_Value: 0
+  redOutBlueIn:
+    m_OverrideState: 0
+    m_Value: 0
+  greenOutRedIn:
+    m_OverrideState: 0
+    m_Value: 0
+  greenOutGreenIn:
+    m_OverrideState: 0
+    m_Value: 100
+  greenOutBlueIn:
+    m_OverrideState: 0
+    m_Value: 0
+  blueOutRedIn:
+    m_OverrideState: 0
+    m_Value: 0
+  blueOutGreenIn:
+    m_OverrideState: 0
+    m_Value: 0
+  blueOutBlueIn:
+    m_OverrideState: 0
+    m_Value: 100
+--- !u!114 &-644206121954482269
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb4b772797da9440885e8bd939e9560, type: 3}
+  m_Name: ColorCurves
+  m_EditorClassIdentifier: 
+  active: 0
+  master:
+    m_OverrideState: 1
+    m_Value:
+      <length>k__BackingField: 5
+      m_Loop: 0
+      m_ZeroValue: 0
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.15249664
+          value: 0.4177215
+          inSlope: -11.748373
+          outSlope: -11.748373
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.5991903
+          value: 0.39803112
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.7692308
+          value: 0.53586495
+          inSlope: 0.6600603
+          outSlope: 0.6600603
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  red:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 2
+      m_Loop: 0
+      m_ZeroValue: 0
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  green:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 2
+      m_Loop: 0
+      m_ZeroValue: 0
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  blue:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 2
+      m_Loop: 0
+      m_ZeroValue: 0
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  hueVsHue:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 0
+      m_Loop: 1
+      m_ZeroValue: 0.5
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  hueVsSat:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 0
+      m_Loop: 1
+      m_ZeroValue: 0.5
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  satVsSat:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 0
+      m_Loop: 0
+      m_ZeroValue: 0.5
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  lumVsSat:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 0
+      m_Loop: 0
+      m_ZeroValue: 0.5
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+--- !u!114 &-23292615004248266
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352d517c2f5b5c347acc5918293063f0, type: 3}
+  m_Name: MyRayTracing
+  m_EditorClassIdentifier: 
+  active: 1
+  RayTracingShader: {fileID: 0}
+  Enable:
+    m_OverrideState: 1
+    m_Value: 1
+  SkyboxTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  AccSample:
+    m_OverrideState: 0
+    m_Value: 0
+  rayBounce:
+    m_OverrideState: 0
+    m_Value: 2
+  CreateTestScene:
+    m_OverrideState: 0
+    m_Value: 0
+  SceneSeed:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: FallbackVolume
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 7624906733820477611}
+  - {fileID: -8980987725624190304}
+  - {fileID: 1931563738064022936}
+  - {fileID: -1196163815882609368}
+  - {fileID: -644206121954482269}
+  - {fileID: -23292615004248266}
+--- !u!114 &1931563738064022936
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 1
+  gaussianStart:
+    m_OverrideState: 1
+    m_Value: 0
+  gaussianEnd:
+    m_OverrideState: 1
+    m_Value: 1000
+  gaussianMaxRadius:
+    m_OverrideState: 1
+    m_Value: 1.03
+  highQualitySampling:
+    m_OverrideState: 1
+    m_Value: 0
+  focusDistance:
+    m_OverrideState: 1
+    m_Value: 10
+  aperture:
+    m_OverrideState: 1
+    m_Value: 5.6
+  focalLength:
+    m_OverrideState: 1
+    m_Value: 50
+  bladeCount:
+    m_OverrideState: 1
+    m_Value: 5
+  bladeCurvature:
+    m_OverrideState: 1
+    m_Value: 1
+  bladeRotation:
+    m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &7624906733820477611
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 0
+  skipIterations:
+    m_OverrideState: 1
+    m_Value: 0
+  threshold:
+    m_OverrideState: 0
+    m_Value: 0.92
+  intensity:
+    m_OverrideState: 0
+    m_Value: 13.3
+  scatter:
+    m_OverrideState: 1
+    m_Value: 1
+  clamp:
+    m_OverrideState: 1
+    m_Value: 65472
+  tint:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  highQualityFiltering:
+    m_OverrideState: 1
+    m_Value: 0
+  downscale:
+    m_OverrideState: 0
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
+  dirtTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  dirtIntensity:
+    m_OverrideState: 1
+    m_Value: 0
