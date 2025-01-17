@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612e70f49e5124da0a95111a57250300, type: 3}
+  m_Name: VoidOutFog
+  m_EditorClassIdentifier: 
+  raymarchQuality: 6
+  raymarchMinStep: 0.25
+  jittering: 1.25
+  dithering: 1
+  renderQueue: 3100
+  sortingLayerID: 0
+  sortingOrder: 0
+  noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
+  noiseStrength: 1.09
+  noiseScale: 15
+  noiseFinalMultiplier: 1
+  useDetailNoise: 1
+  detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
+  detailScale: 0.35
+  detailStrength: 0
+  detailOffset: 0
+  density: 0.95
+  shape: 0
+  border: 0.061
+  verticalOffset: 0
+  distance: 0
+  distanceFallOff: 1
+  maxDistance: 10000
+  maxDistanceFallOff: 0
+  terrainFit: 0
+  terrainFitResolution: 128
+  terrainLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967293
+  terrainFogHeight: 39.6
+  terrainFogMinAltitude: 0
+  terrainFogMaxAltitude: 150
+  albedo: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0.09019608}
+  enableDepthGradient: 0
+  depthGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 1, g: 0.3726415, b: 0.3726415, a: 0}
+    key3: {r: 1, g: 0.3726415, b: 0.3726415, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  depthGradientMaxDistance: 500
+  enableHeightGradient: 0
+  heightGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  brightness: 1
+  deepObscurance: 0
+  specularColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+  specularThreshold: 0.343
+  specularIntensity: 0.239
+  turbulence: 0.73
+  windDirection: {x: -0.02, y: 0, z: 0}
+  useCustomDetailNoiseWindDirection: 0
+  detailNoiseWindDirection: {x: 0.02, y: 0, z: 0}
+  dayNightCycle: 0
+  sunDirection: {x: 0, y: 0, z: 0}
+  sunColor: {r: 1, g: 1, b: 1, a: 1}
+  sunIntensity: 1
+  ambientLightMultiplier: 0
+  lightDiffusionPower: 32
+  lightDiffusionIntensity: 0.4
+  receiveShadows: 1
+  shadowIntensity: 0.5
+  shadowCancellation: 0
+  shadowMaxDistance: 250
+  cookie: 1
+  distantFog: 1
+  distantFogStartDistance: 419.95
+  distantFogDistanceDensity: 0.5
+  distantFogMaxHeight: 4000
+  distantFogHeightDensity: 0.5
+  distantFogColor: {r: 0, g: 0, b: 0, a: 0.4862745}
+  distantFogDiffusionIntensity: 0.4

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbccaf59816194091a435d5f30e5c811, type: 3}
+  m_Name: StageSnow
+  m_EditorClassIdentifier: 
+  minimumAltitude: -10
+  minimumAltitudeVegetationOffset: 0
+  snowTint: {r: 1, g: 1, b: 1, a: 1}
+  altitudeScatter: 0
+  altitudeBlending: 0
+  useZenithalCoverage: 1
+  coverageExtension: 1
+  coverageResolution: 2
+  groundCoverage: 0
+  groundCoverageRandomization: 0
+  slopeThreshold: 0
+  slopeSharpness: 0
+  slopeNoise: 0
+  snowNormalsTex: {fileID: 2800000, guid: 6e97ae521a24e404ebf8f4e3315de047, type: 3}
+  noiseTex: {fileID: 0}
+  snowNormalsStrength: 1
+  noiseTexScale: 0.1
+  distanceSlopeThreshold: 0.7
+  coverageMask: 0
+  coverageMaskTexture: {fileID: 0}
+  coverageMaskWorldSize: {x: 2000, y: 0, z: 2000}
+  coverageMaskWorldCenter: {x: 0, y: 0, z: 0}
+  snowQuality: 30
+  coverageUpdateMethod: 1
+  reliefAmount: 0.3
+  occlusion: 0
+  occlusionIntensity: 1.2
+  glitterStrength: 0.75
+  snowfall: 1
+  snowfallIntensity: 0.821
+  snowfallSpeed: 1
+  snowfallWind: 0.234
+  snowfallDistance: 100
+  snowfallUseIllumination: 0
+  snowdustIntensity: 0.056
+  snowdustVerticalOffset: 0.5
+  maxExposure: 0
+  smoothness: 0
+  preserveGI: 0
+  snowAmount: 0.66
+  cameraFrost: 1
+  cameraFrostIntensity: 0.35
+  cameraFrostSpread: 1.2
+  cameraFrostDistortion: 0.25
+  cameraFrostTintColor: {r: 1, g: 1, b: 1, a: 1}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  zenithalMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  billboardCoverage: 1.4
+  grassCoverage: 0.75

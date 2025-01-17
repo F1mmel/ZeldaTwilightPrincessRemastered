@@ -2,6 +2,23 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+/UpgradeLog.htm
+/.collab*
+/.vsconfig
+/Assets/___MUSIC
+/Assets/Resources/_______DX_MUSIC
+/Assets/01_Menu/Sounds/*.wav
+/Assets/Shader/Distortion/*
+/Assets/TextMesh Pro/*
+/ProjectSettings/*
+**/MassiveCloudsAtmos/Editor
+**/GlobalSnow*
+**DOTween*
+/Assets/LinkIconSmall*
+/Assets/Plugins/Demigiant/*
+/Assets/Plugins/Febucci/*
+/Assets/Plugins/SerializedCollections/*
+/Assets/Plugins/tpaudio*
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -9,6 +26,15 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/Tools/
+/.idea
+/.vscode
+/Assets/_External
+/Assets/GameFiles
+/Assets/GameFiles_HD
+/Packages
+/ZeldaTPConfigurator*
+**/Animancer*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -46,6 +72,8 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.meta
+*.prefab
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -71,3 +99,4 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Assets/01_Menu/Sounds

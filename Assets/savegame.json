@@ -1,0 +1,38 @@
+[
+  {
+    "SaveDetails": {
+      "PlayerName": "",
+      "HorseName": "",
+      "HeartCount": 3,
+      "SaveTime": "",
+      "TotalPlayTime": ""
+    },
+    "SaveData": {
+      "CurrentStage": ""
+    }
+  },
+  {
+    "SaveDetails": {
+      "PlayerName": "",
+      "HorseName": "",
+      "HeartCount": 3,
+      "SaveTime": "",
+      "TotalPlayTime": ""
+    },
+    "SaveData": {
+      "CurrentStage": ""
+    }
+  },
+  {
+    "SaveDetails": {
+      "PlayerName": "",
+      "HorseName": "",
+      "HeartCount": 3,
+      "SaveTime": "",
+      "TotalPlayTime": ""
+    },
+    "SaveData": {
+      "CurrentStage": ""
+    }
+  }
+]
