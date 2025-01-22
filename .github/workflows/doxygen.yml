@@ -11,20 +11,18 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-    concurrency:
-      group: deploy-pages
-      cancel-in-progress: true
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run Doxygen
-        uses: mattnotmitt/doxygen-action@v1
-        with:
-          doxyfile-path: Doxyfile
-      - name: Upload static files as artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/doxygen/html/
-          name: github-pages-${{ github.run_number }}-${{ github.sha }}
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Run Doxygen
+      uses: mattnotmitt/doxygen-action@v1
+      with:
+        doxyfile-path: Doxyfile
+    - name: Upload static files as artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: docs/doxygen/html/
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
+      id: deployment
