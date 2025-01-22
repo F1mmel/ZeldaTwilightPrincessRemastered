@@ -6,15 +6,23 @@ This is a community-driven project aiming to enhance and remaster *The Legend of
 
 ## Project goals
 
-The long-term goal of this project is to create a highly polished remastered version of Twilight Princess. This includes:
+Our primary goal is to deliver a polished remastered version of *Twilight Princess* that exceeds expectations. Key enhancements include:
 
-- High-definition textures and models
-- Improved lighting and shading
-- Gameplay tweaks for smoother mechanics
-- Improved modding tools to allow further customization
-- HD version supported
-  
-We aim to remaster the **GameCube USA** version first, as it is the foundation of the Twilight Princess experience. Future goals include compatibility with other versions of the game, such as:
+- **High-Definition Assets:** Recreated textures and models for a sharper, more immersive look.
+- **Improved Lighting and Shading:** Enhanced visual fidelity through better lighting and modern shading techniques.
+- **Gameplay Enhancements:** Refinements for smoother mechanics and controls.
+- **Modding Support:** Advanced tools to enable extensive customization and community contributions.
+- **Full HD Compatibility** 
 
-- PAL GameCube
-- JPN GameCube
+### Target Version
+
+Our initial focus is the **GameCube USA** version, considered the definitive base for *Twilight Princess*. Once this version is complete, we plan to extend compatibility to:
+
+- **PAL GameCube**
+- **JPN GameCube**
+
+## Documentation
+
+A complete Doxygen-generated documentation of the project's codebase is available. It includes detailed descriptions of classes, functions, and other elements to help contributors understand and work with the code effectively.
+
+You can access the documentation here: [Project Documentation](https://f1mmel.github.io/ZeldaTwilightPrincessRemastered/)
