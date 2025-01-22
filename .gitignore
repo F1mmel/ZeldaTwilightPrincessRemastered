@@ -6,6 +6,7 @@
 /.collab*
 /.vsconfig
 /Assets/___MUSIC
+/docs/*
 /Assets/Resources/_______DX_MUSIC
 /Assets/01_Menu/Sounds/*.wav
 /Assets/Shader/Distortion/*
