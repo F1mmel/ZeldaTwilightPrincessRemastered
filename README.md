@@ -1,5 +1,6 @@
 # The Legend of Zelda: Twilight Princess Remastered
 
+![Repo size](https://img.shields.io/github/repo-size/F1mmel/ZeldaTwilightPrincessRemastered)
 ![Workflow Status](https://github.com/F1mmel/ZeldaTwilightPrincessRemastered/actions/workflows/doxygen.yml/badge.svg)
 ![Workflow Status](https://github.com/F1mmel/ZeldaTwilightPrincessRemastered/actions/workflows/pages/pages-build-deployment/badge.svg)
 
