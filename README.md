@@ -1,5 +1,8 @@
 # The Legend of Zelda: Twilight Princess Remastered
 
+![Workflow Status](https://github.com/F1mmel/ZeldaTwilightPrincessRemastered/actions/workflows/doxygen.yml/badge.svg)
+![Workflow Status](https://github.com/F1mmel/ZeldaTwilightPrincessRemastered/actions/workflows/pages/pages-build-deployment/badge.svg)
+
 ## What is this?
 
 This is a community-driven project aiming to enhance and remaster *The Legend of Zelda: Twilight Princess*. The project focuses on improving visuals, audio, and gameplay, while staying true to the original experience.
