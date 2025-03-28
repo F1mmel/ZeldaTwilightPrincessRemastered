@@ -10,6 +10,7 @@ using WiiExplorer;
 public class ZeldaManager : MonoBehaviour
 {
     public bool UseJ3DModel;
+    public bool CombineMeshes;
     
     [Header("Settings")]
     [ConditionalField("Use HD textures")]

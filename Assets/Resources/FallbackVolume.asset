@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.83
+    m_Value: 0.15
   contrast:
     m_OverrideState: 1
     m_Value: 7.6
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 5.7
+    m_Value: 12
 --- !u!114 &-1196163815882609368
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -335,7 +335,6 @@ MonoBehaviour:
   - {fileID: 1931563738064022936}
   - {fileID: -1196163815882609368}
   - {fileID: -644206121954482269}
-  - {fileID: -23292615004248266}
 --- !u!114 &1931563738064022936
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -348,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
     m_Value: 1

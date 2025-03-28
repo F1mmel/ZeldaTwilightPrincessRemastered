@@ -12,6 +12,8 @@ public class ZeldaTP : MonoBehaviour
     {
         Instance = this;
         
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = FPS;
         
         List<DisplayInfo> displays = new List<DisplayInfo>();
         Screen.GetDisplayLayout(displays);

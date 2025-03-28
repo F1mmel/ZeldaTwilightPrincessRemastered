@@ -1113,6 +1113,21 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        if (transform.GetComponent<SkinnedMeshRenderer>() != null)
+        {
+            SkinnedMeshRenderer skinnedMeshRenderer = transform.GetComponent<SkinnedMeshRenderer>();
+            Bounds bounds = skinnedMeshRenderer.bounds;
+
+            Vector3 center = bounds.center;
+            Vector3 size = bounds.size;
+
+            Gizmos.color = Color.green;
+
+            Gizmos.DrawWireCube(center, size);
+        }
+    }
 
     public void CreateMesh(GameObject child, SHP1.Shape shape, List<Vector3> vertices, List<Vector3> normals, BTI bti,
         BTI vertexBti, MeshVertexHolder vertexHolder, Material3 mat, bool external, bool externalVertex, bool isModel,
@@ -1178,6 +1193,17 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
         mesh.uv7 = vertexHolder.Tex6.ToArray();
         mesh.uv8 = vertexHolder.Tex7.ToArray();
 
+        OpenTK.Vector3 center = shape.BoundingBox.Center;
+        OpenTK.Vector3 size = shape.BoundingBox.Max;
+
+        Bounds bounds = new Bounds(new Vector3(center.X, center.Y, center.Z), new Vector3(size.X, size.Y, size.Z));
+        bounds.extents = new Vector3(shape.BoundingBox.Extents.X, shape.BoundingBox.Extents.Y,
+            shape.BoundingBox.Extents.Z);
+        bounds.min = new Vector3(shape.BoundingBox.Min.X, shape.BoundingBox.Min.Y, shape.BoundingBox.Min.Z);
+        bounds.max = new Vector3(shape.BoundingBox.Max.X, shape.BoundingBox.Max.Y, shape.BoundingBox.Max.Z);
+
+        mesh.bounds = bounds;
+        mesh.RecalculateBounds();
 
         List<UnityEngine.Color> colors = new List<UnityEngine.Color>();
         foreach (WLinearColor linearColor in vertexHolder.Color0) colors.Add(new UnityEngine.Color(linearColor.R, linearColor.G, linearColor.B, linearColor.A));
@@ -1834,6 +1860,11 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
         return o;
     }
 
+    public GameObject GetWorldRoot()
+    {
+        return RecursiveFindChild(transform, "world_root").gameObject;
+    }
+
     public BMD SetParentJoint(BMD parent, string jointName)
     {
         Transform parentTransform = RecursiveFindChild(parent.transform, jointName);
@@ -1977,6 +2008,27 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
     {
         StartCoroutine(_RotateByPivot(target));
     }
+
+    public BMD ToUrpLitShader()
+    {
+        foreach (Material material in transform.GetComponent<SkinnedMeshRenderer>().sharedMaterials)
+        {
+            Texture mainTex = material.GetTexture("_MainTex");
+            Debug.Log(mainTex.width);
+
+            material.shader = Shader.Find("Universal Render Pipeline/Lit");
+
+            if (mainTex != null)
+            {
+                material.SetTexture("_BaseMap", mainTex);
+
+                material.DisableKeyword("_ALPHATEST_ON");
+            }
+        }
+
+        return this;
+    }
+
 
     public void AddClothPhysics(float maxCoefficients)
     {
