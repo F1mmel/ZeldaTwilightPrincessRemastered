@@ -131,7 +131,13 @@ public class J3DModel : MonoBehaviour
                 Debug.LogError(e);
             }
         });
-        CombineMeshes();
+        
+        if(ZeldaManager.Instance.CombineMeshes)
+            CombineMeshes();
+        else
+        {
+            gameObject.transform.localScale = new Vector3(0.01f, 0.01f, -0.01f);
+        }
     }
 
     private void CreateHierarchy(Transform parent)
@@ -303,6 +309,16 @@ public class J3DModel : MonoBehaviour
                 vertexColorTexture = TEX1Tag.BinaryTextureImages[MAT3Tag.TextureRemapTable[vertexTexture]];
             }
 
+            if (shapeIndex == 22)
+            {
+                Debug.LogError(material.TextureIndexes.Length);
+
+                foreach (var a in material.TextureIndexes)
+                {
+                    Debug.LogError(a);
+                }
+            }
+
             List<OpenTK.Vector3> vertPos =
                 shape.OverrideVertPos.Count > 0 ? shape.OverrideVertPos : shape.VertexData.Position;
             List<OpenTK.Vector3> vertNormal =
@@ -401,6 +417,12 @@ public class J3DModel : MonoBehaviour
         material.mainTexture = texture;
         material.mainTextureOffset = new Vector2(0, 0);
         material.SetVector("_Offset", new Vector4(0, 0, 0, 0));
+
+        if (child.name == "22_dd_MA01_Mizusoko_v_x_I_mizusoko")
+        {
+            Debug.Log(mat.BlendModeIndex.Type);
+            Debug.Log(mat.TEVKonstAlphaSelectors[0]);
+        }
 
         if (vertexBti != null)
         {

@@ -248,8 +248,20 @@ public class BMDFetcher
         else if (name.Equals("E_nest")) FetchArchive("E_nest", "o_hachinosu_01");
         else if (name.Equals("Obj_knk"))
         {
-            FetchArchive("J_Kazami", "arm");
-            FetchArchive("J_Kazami", "pole");
+            BMD[] arms = new BMD[4];
+            arms[0] = FetchArchive("J_Kazami", "arm").ToUrpLitShader().Translate(new Vector3(0f, 0.15f, 0f));
+            arms[1] = FetchArchive("J_Kazami", "arm").ToUrpLitShader().RotateY(90);
+            arms[2] = FetchArchive("J_Kazami", "arm").ToUrpLitShader().RotateY(180);
+            arms[3] = FetchArchive("J_Kazami", "arm").ToUrpLitShader().RotateY(270);
+            
+            foreach (BMD arm in arms)
+            {
+                RotateObject rotate = arm.GetWorldRoot().AddComponent<RotateObject>();
+                rotate.rotationAxis = RotateObject.RotationAxis.Y;
+                rotate.rotationSpeed = 1.25f;
+            }
+            
+            FetchArchive("J_Kazami", "pole").ToUrpLitShader().Translate(new Vector3(0f, -0.15f, 0f));
         }
         else if (name.Equals("Obj_nd")) FetchArchive("Obj_ndoor", "m_nekodoor");
         else if (name.Equals("wshield")) FetchArchive("CWShd", "al_shb");

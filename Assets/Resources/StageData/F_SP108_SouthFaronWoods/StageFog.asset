@@ -44,7 +44,7 @@ MonoBehaviour:
   terrainFogHeight: 25
   terrainFogMinAltitude: 0
   terrainFogMaxAltitude: 150
-  albedo: {r: 0.3019608, g: 0.003921569, b: 0.88235295, a: 0.48235294}
+  albedo: {r: 0.4598564, g: 0.0039215474, b: 0.88235295, a: 0.48235294}
   enableDepthGradient: 0
   depthGradient:
     serializedVersion: 2
@@ -73,6 +73,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   depthGradientMaxDistance: 1000
@@ -104,11 +105,12 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   brightness: 1
   deepObscurance: 0
-  specularColor: {r: 0.3019608, g: 0.003921569, b: 0.88235295, a: 0.48235294}
+  specularColor: {r: 0.78219044, g: 0.54402506, b: 1, a: 0.48235294}
   specularThreshold: 0.792
   specularIntensity: 0.506
   turbulence: 0.73

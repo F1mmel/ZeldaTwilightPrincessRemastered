@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
   m_Name: ScreenSpaceAmbientOcclusion
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   m_Settings:
     AOMethod: 1
     Downsample: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952211dd0b8f432ca3e01150850775e5, type: 3}
   m_Name: StylizedWater2UnderwaterRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   resources: {fileID: 11400000, guid: 4eff212383c9f5945ae947b357c76582, type: 2}
   settings:
     allowBlur: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1614fc811f8f184697d9bee70ab9fe5, type: 3}
   m_Name: DecalRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   m_Settings:
     technique: 0
     maxDrawDistance: 1000
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e8b0873f8694aac99cc430ecec01b8, type: 3}
   m_Name: GlobalSnowRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
 --- !u!114 &-1410969025615571249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48bd76fbc46e46fe9bc606bd3c30bd9b, type: 3}
   m_Name: WaterDynamicEffectsRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     renderRange: 200
     fadePercentage: 10
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2086e3e143e14a2abcd3b0dbc77a10ac, type: 3}
   m_Name: StylizedWaterRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   screenSpaceReflectionSettings:
     enable: 1
   directionalCaustics: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
-  m_Name: Copy
+  m_Name: Default
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
@@ -167,8 +167,9 @@ MonoBehaviour:
   - {fileID: -12347882935168694}
   - {fileID: -1410969025615571249}
   - {fileID: -3204345086189784349}
+  - {fileID: 8179794514477436812}
   - {fileID: 2135289636022389551}
-  m_RendererFeatureMap: 2574c5dd62790fca12beb80c01e190c51b80c9cbf5b970e74ad1eb77aa21d4ffcfd61a97253b6bece3b2e3171fe187d32f0bb0579c12a21d
+  m_RendererFeatureMap: 2574c5dd62790fca12beb80c01e190c51b80c9cbf5b970e74ad1eb77aa21d4ffcfd61a97253b6bece3b2e3171fe187d38ccf1dc3c57784712f0bb0579c12a21d
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -206,10 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f9b1721dbf3a84cbd593bdaa1e926f, type: 3}
   m_Name: MassiveClouds UniversalRP
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   renderPassEvent: 450
-  drawOnSceneView: 1
-  MassiveCloudsRenderer: {fileID: 11400000, guid: d27de9fbe572dd747bd38fb0901f57fa, type: 2}
+  drawOnSceneView: 0
+  MassiveCloudsRenderer: {fileID: 0}
 --- !u!114 &4987291733221498871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +224,45 @@ MonoBehaviour:
   m_Name: GlobalSnowRenderFeature
   m_EditorClassIdentifier: 
   m_Active: 1
+--- !u!114 &8179794514477436812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderObjects
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    passTag: RenderObjects
+    Event: 150
+    filterSettings:
+      RenderQueueType: 1
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 8
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 44
+    overrideShader: {fileID: 0}
+    overrideShaderPassIndex: 0
+    overrideMode: 1
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 3
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 6
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
