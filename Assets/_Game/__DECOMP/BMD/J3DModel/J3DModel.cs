@@ -46,12 +46,12 @@ public class J3DModel : MonoBehaviour
 
     private byte[] buffer;
 
-    public void Parse(ArcFile file)
+    public void Parse(string name, byte[] Buffer)
     {
-        buffer = file.Buffer;
-        Name = file.Name;
+        buffer = Buffer;
+        Name = name;
         
-        using (EndianBinaryReader reader = new EndianBinaryReader(file.Buffer, Endian.Big))
+        using (EndianBinaryReader reader = new EndianBinaryReader(Buffer, Endian.Big))
         {
             reader.Skip(8);
             int Size = reader.ReadInt32();
@@ -65,6 +65,11 @@ public class J3DModel : MonoBehaviour
         if(IsModel) CreateHierarchy(transform);
         
         _ = LoadRemainingTagsAsync();
+    }
+
+    public void Parse(ArcFile file)
+    {
+        Parse(file.Name, file.Buffer);
     }
     
     private async Task LoadRemainingTagsAsync()

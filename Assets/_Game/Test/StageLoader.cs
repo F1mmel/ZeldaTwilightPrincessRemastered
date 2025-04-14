@@ -96,6 +96,8 @@ public class StageLoader : MonoBehaviour
             TransitionManager.Instance.image.DOFade(1f, 0.0f);
             TransitionManager.Instance.image.DOFade(0f, 0.5f);
         }
+        
+        ProfileList.ReadProfiles();
 
         if(LoadStageOnStart) EnterStage(Stage, StageEnterType.UNLOAD);
     }
@@ -148,6 +150,11 @@ public class StageLoader : MonoBehaviour
                 }
             } 
         }
+
+        BMD vrBox = BMD.CreateModelFromPath(stage, "vrbox_kasumim", null);
+        vrBox.RemoveCollision();
+        vrBox = BMD.CreateModelFromPath(stage, "vrbox_kumo", null);
+        vrBox.RemoveCollision();
 
         HandleStageObjects();
         LoadStageResources();

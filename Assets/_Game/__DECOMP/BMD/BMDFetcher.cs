@@ -206,6 +206,24 @@ public class BMDFetcher
         else if (name.Equals("Pumpkin")) FetchArchive("pumpkin", "pumpkin");
         else if (name.Equals("Pleaf")) FetchArchive("J_Hatake", "j_hatake00");
         else if (name.Equals("E_nest")) FetchArchive("E_nest", "o_hachinosu_01");
+        else if (name.Equals("bura7A")) FetchArchive("S_bura_7A", "s_bura_swi7a");
+        else if (name.Equals("bura7B")) FetchArchive("S_bura_7b", "s_l7bura_swi");
+        else if (name.Equals("bura7C")) FetchArchive("S_bura_7c", "s_l7bura_swil");
+        else if (name.Equals("hsMato"))
+        {
+            FetchArchive("L7HsMato", "lv7_hsma00");
+        }
+        else if (name.Equals("fan"))
+        {
+            string[] l_arcName = {
+                "Obj_prop1",
+                "Obj_prop0",
+                "Obj_prop2",
+            };
+
+            BMD fan = FetchArchive(l_arcName[1], 4);
+            
+        }
         else if (name.Equals("Obj_knk"))
         {
             BMD[] arms = new BMD[4];
@@ -559,6 +577,12 @@ public class BMDFetcher
             BMD waistR = FetchArchive("B_tnp", "tn_armor_waist_r").SetParentJoint(m, "waist_armor_R");
             BMD shield = FetchArchive("B_tnp", "tn_shield").SetParentJoint(m, "hand_L");
             BMD sword = FetchArchive("B_tnp", "tn_sword_a").SetParentJoint(m, "hand_R");
+        }
+        else if (name.Equals("B_gg"))
+        {
+            BMD m = FetchArchive("B_gg", "gg", "gg_wait");
+            BMD sword = FetchArchive("B_gg", "gg_sword").SetParentJoint(m, "hand_L");
+            BMD shield = FetchArchive("B_gg", "gg_shield").SetParentJoint(m, "hand_R").TranslateLocal(new Vector3(-30.75f, -19.51f, 4.1f)).RotateY(112).RotateX(-17);
         }
         else if (name.Equals("Cstatue"))
         {        
@@ -975,7 +999,6 @@ public class BMDFetcher
             if (FetchAmount == 0)
             {
                 model = BMD.CreateModelFromPath(archive, bmd, null, temp);
-
             }
             else
             {
@@ -1008,6 +1031,63 @@ public class BMDFetcher
         FetchAmount++;
         CurrentBMD = model;
         return model;
+    }   
+
+    public static BMD FetchArchive(string arc, int fileId, string animation = "")
+    {
+            
+        string arcPath = OBJ_PATH + "/" + arc + ".arc";
+        
+        Archive archive = null;
+        if (ARCHIVES.ContainsKey(arc)) archive = ARCHIVES[arc];
+        else
+        {
+            archive = ArcReader.Read(arcPath);
+            ARCHIVES.Add(arc, archive);
+        }
+        
+        RARC.File file = ArcReader.GetFileById(archive, fileId);
+        
+        BMD model = null;
+        if (MODELS.ContainsKey(file.Name)) model = MODELS[file.Name];
+        else
+        {
+            if (FetchAmount == 0)
+            {
+                model = BMD.CreateModelFromBuffer(archive, file.Name, file.FileData, null, temp);
+            }
+            else
+            {
+                GameObject child = new GameObject(file.Name);
+                child.transform.parent = temp.transform;
+                child.transform.localPosition = Vector3.zero;
+                child.transform.localScale = Vector3.one;
+                model = BMD.CreateModelFromBuffer(archive, file.Name, file.FileData, null, child);
+            }
+        }
+
+        if (!animation.Equals(""))
+        {
+            model.PrepareWeights();
+            
+            AnimationJobManager job = model.AddComponent<AnimationJobManager>();
+            job.PlayAnimation(animation);
+        }
+        
+        CacheData.Add(new Cache()
+        {
+            BmdName = file.Name,
+            ObjectName = tempOName,
+            Actor = model.GetComponent<Actor>(),
+            Bmd = model,
+            AnimationName = animation
+        });
+        
+        amount++;
+        FetchAmount++;
+        CurrentBMD = model;
+        return model;
+        
     }   
     
     public static BMD FetchArchiveSeperate(string child, string arc, string bmd, string animation = "")
