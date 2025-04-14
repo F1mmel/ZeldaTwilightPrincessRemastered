@@ -161,7 +161,7 @@ Material:
     - _DistanceNormalsOn: 1
     - _DistanceNormalsTiling: 0.25
     - _DstBlend: 0
-    - _EdgeFade: 12
+    - _EdgeFade: 25
     - _EnvironmentReflections: 1
     - _EnvironmentReflectionsOn: 1
     - _FlatShadingOn: 0

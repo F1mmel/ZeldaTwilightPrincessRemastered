@@ -97,7 +97,7 @@ public class BMD : MonoBehaviour
         return bmd;
     }
 
-    public static BMD CreateModelFromPath(Archive archive, string name, List<BTI> externalBTIs, GameObject o = null)
+    public static BMD CreateModelFromBuffer(Archive archive, string name, byte[] buffer, List<BTI> externalBTIs, GameObject o = null)
     {
         if (!name.EndsWith(".bmd")) name += ".bmd";
 
@@ -105,15 +105,55 @@ public class BMD : MonoBehaviour
         bmd.Actor = o.GetComponent<Actor>();
         if (bmd.Actor == null) bmd.Actor = bmd.transform.parent.GetComponent<Actor>();
 
-        byte[] buffer = ArcReader.GetBuffer(archive, name);
+        if (o == null)
+        {
+            o = new GameObject(name);
+            o.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        }
 
-        //o.transform.localScale = new Vector3(0.01f, 0.01f, -0.01f);
+        bmd.Archive = archive;
+        bmd.Parse(name, buffer, externalBTIs, true);
+        
+        // Check if model has joints, if so prepare weights and use SkinnedMeshRenderer
+        if (bmd.JNT1Tag.BindJoints.Count != 0)
+        {
+            bmd.PrepareWeights();
+            bmd.AddMeshColliderToSkinned();
+
+            foreach (MeshFilter filter in bmd.GetComponentsInChildren<MeshFilter>())
+            {
+                DestroyImmediate(filter.gameObject);
+            }
+        }
+
+        return bmd;
+    }
+
+    public static BMD CreateModelFromPath(Archive archive, string name, List<BTI> externalBTIs, GameObject o = null)
+    {
 
         if (o == null)
         {
             o = new GameObject(name);
             o.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         }
+        
+        if (!name.EndsWith(".bmd")) name += ".bmd";
+
+        BMD bmd = o.AddComponent<BMD>();
+        bmd.Actor = o.GetComponent<Actor>();
+        if (bmd.Actor == null) bmd.Actor = bmd.transform.parent?.GetComponent<Actor>();
+
+        byte[] buffer = ArcReader.GetBuffer(archive, name);
+        
+        
+        /*J3DModel model = o.AddComponent<J3DModel>();
+        model.ExternalTextures = externalBTIs;
+        model.Parse(name, buffer);
+
+        return new BMD();*/
+
+        //o.transform.localScale = new Vector3(0.01f, 0.01f, -0.01f);
 
         bmd.Archive = archive;
         bmd.Parse(name, buffer, externalBTIs, true);
@@ -2389,6 +2429,11 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
         return this;
     }
 
+    public void RemoveCollision()
+    {
+        GetComponent<Collider>().enabled = false;
+    }
+
     public void ApplyFirstTranslation()
     {
         transform.Translate(initTranslation);
@@ -2493,6 +2538,14 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
         return this;
     }
 
+    public BMD RotateX(int angle)
+    {
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x + angle, transform.localEulerAngles.y,
+            transform.localEulerAngles.z);
+
+        return this;
+    }
+
     public BMD RotateY(int angle)
     {
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + angle,
@@ -2539,7 +2592,6 @@ private void PlayNextState(ZeldaAnimation[] states, int currentIndex)
         foreach (Material material in transform.GetComponent<SkinnedMeshRenderer>().sharedMaterials)
         {
             Texture mainTex = material.GetTexture("_MainTex");
-            Debug.Log(mainTex.width);
 
             material.shader = Shader.Find("Universal Render Pipeline/Lit");
 
